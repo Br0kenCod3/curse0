@@ -1,0 +1,19 @@
+
+<%- include( "partials/header.ejs") %>
+
+
+<h1>
+
+
+    <%  if (locals.blog) { %>
+      <form action="/blogs" method="POST">
+        <input type="text" name="blogID" value=<%=blog.index %> hidden>
+        <input type="text" name="text" value=<%=blog.text %>>
+        <input type="submit" name="edit_submit" value="edit_submit">
+      </form>
+      <%  }%>
+</h1>
+
+
+
+<%- include( "partials/footer.ejs") %>

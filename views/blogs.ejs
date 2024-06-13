@@ -1,0 +1,32 @@
+<%- include( "partials/header.ejs") %>
+
+
+
+
+
+    <%  if (locals.blogs) { %>
+        <% blogs.forEach(element => { %>
+          <div style="border: 0.4vh,black,solid;border-radius: 3%; margin: 1vh;">
+            <div style="width: 40vw; align-items: center; align-content: center; display: flex; justify-content: center;">
+              <form action="/blogs" method="POST" style="margin: 1vh;">
+                <input type="text" name="index" value=<%= element.index %> hidden>
+                <input type="submit" name="edit" value="edit">
+              </form>
+              <form action="/blogs" method="POST" style="margin: 1vh;">
+                <input type="text" name="index" value=<%= element.index %> hidden>
+                <input type="submit" name="delete" value="delete">
+              </form>
+            </div>
+            <div>
+              <h2 style="margin: 1vh;">
+              <%= element.text %>
+              </h2>
+            </div>
+          </div>
+        <% }) %>
+      <%  }%>
+
+
+
+
+<%- include( "partials/footer.ejs") %>
